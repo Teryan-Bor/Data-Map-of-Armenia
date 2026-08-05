@@ -64,11 +64,13 @@ This project was built to practice:
 - Working with **GeoJSON** and **Leaflet.js** to render geographic data
 - Displaying data in a clear and visually understandable way using color gradients
 
+## LIVE DEMO
+https://teryan-bor.github.io/Data-Map-of-Armenia/
+
+
 ## Getting Started
 
 Clone the repository and open `index.html` in your browser. No build tools or installation required.
-
-[Live Demo]: https://teryan-bor.github.io/Data-Map-of-Armenia/
 
 ```bash
 git clone <your-repo-url>
