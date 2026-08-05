@@ -1,3 +1,6 @@
+let popBtn = document.getElementById("population");
+let regInfo = document.getElementById("region_info");
+
 let map = L.map("map").setView([40.18, 44.51], 7);
 
 let nameMap = {
@@ -10,38 +13,72 @@ let currentMode = "population";
 let geojsonLayer;
 let tempsData = {};
 
-function style(feature) {
-  const geoName = feature.properties.NAME_1;
-  const key = nameMap[geoName] || geoName;
-  const value = currentData[key] || 0;
+let info = L.control();
 
-  let fillColor;
+info.onAdd = function(){
+  this.div = L.DomUtil.create("div", "info");
+  this.update();
+  return this.div;
+}
 
-  if (currentMode === "population") {
-    fillColor = getPopulationColor(value);
-  }else if (currentMode === "schools") {
-    fillColor = getSchoolsColor(value);
-  }else if (currentMode === "tumo") {
-    fillColor = getTumoColor(value);
-  }else if (currentMode === "temps") {
-    fillColor = getTempColor(value);
-  }else if (currentMode === "grass") {
-    fillColor = getGreenColor(value);
-  }else if (currentMode === "road") {
-    fillColor = getRoadWidth(value);
-  }else if (currentMode === "univer") {
-    fillColor = getUnivColor(value);
+info.update = function(props) {
+  if(!props){
+    this.div.innerHTML = "Hover over a region";
+    return;
   }
 
-  return {
-    fillColor,
+  const geoName = props.NAME_1;
+  const dataKey = nameMap[geoName] || geoName;
+  const value = currentData[dataKey];
+
+  let label = 
+    currentMode === "tumo" 
+      ? value >= 1
+        ? "Has TUMO"
+        : "No TUMO"
+      : (value ?? "No data");
+
+  let unit;
+
+  if(currentMode === "population") {
+    unit = "ppl"
+  }else if(currentMode === "road") {
+    unit = "km"
+  }else if (currentMode === "temps"){
+    unit = "*C"
+  }else {
+    unit = "units"
+  }
+
+  if(!(currentMode === "population" && currentMode === "road" && currentMode === "temps") && value === 1){
+    unit = "unit"
+  }
+
+  this.div.innerHTML = 
+    `<div>
+        <p class="hover_region">${geoName}</p>
+        <p class="region_label">${label} ${unit}</p>
+      </div>`;
+};
+
+info.addTo(map);
+
+function highlight(e) {
+  e.target.setStyle({
     weight: 2,
-    color: "#ffffff",
-    fillOpacity: 0.6,
-  };
+    fillOpacity: 0.35,
+  });
+
+  info.update(e.target.feature.properties)
+}
+
+function reset(e) {
+  geojsonLayer.resetStyle(e.target);
+  info.update();
 }
 
 // ! colors of every case
+
 function getPopulationColor(v) {
   if (v > 800000) {
     return "#800026";
@@ -152,14 +189,14 @@ function getTempColor(t) {
   }
 }
 
-function getGreenColor(v) {
-  if (v === "very high") {
+function getGreenColor(c) {
+  if (c === "very high") {
     return "#0c8324";
-  }else if (v === "high") {
+  }else if (c === "high") {
     return "#26ba26";
-  }else if (v === "medium") {
+  }else if (c === "medium") {
     return "#4eb466";
-  }else if (v === "low") {
+  }else if (c === "low") {
     return "#7aca66";
   }else {
     return "#87eba5";
@@ -192,22 +229,60 @@ function getUnivColor(q) {
   }
 }
 
+function style(feature) {
+  const geoName = feature.properties.NAME_1;
+  const key = nameMap[geoName] || geoName;
+  const value = currentData[key] || 0;
+
+  let fillColor;
+
+  if (currentMode === "population") {
+    fillColor = getPopulationColor(value);
+  }else if (currentMode === "schools") {
+    fillColor = getSchoolsColor(value);
+  }else if (currentMode === "tumo") {
+    fillColor = getTumoColor(value);
+  }else if (currentMode === "temps") {
+    fillColor = getTempColor(value);
+  }else if (currentMode === "grass") {
+    fillColor = getGreenColor(value);
+  }else if (currentMode === "road") {
+    fillColor = getRoadWidth(value);
+  }else if (currentMode === "univer") {
+    fillColor = getUnivColor(value);
+  }
+
+  return {
+    fillColor,
+    weight: 2,
+    color: "#ffffff",
+    fillOpacity: 0.6,
+  };
+}
+
 function onEachFeature(feature, layer) {
   if (feature.properties && feature.properties.NAME_1) {
     layer.bindPopup(feature.properties.NAME_1);
+
+    layer.addEventListener("click", () => {
+      regInfo.innerHTML = `
+      <div class="info_card">
+        <img src="${feature.properties.img}" alt="${feature.properties.NAME_1} image" />
+        <div class="text-wrapper">
+          <h3>${feature.properties.NAME_1}</h3>
+          <p>${feature.properties.main_info}</p>
+        </div>
+        
+        <button>View more about ${feature.properties.NAME_1}</button>
+      </div>`
+    })
   }
 
   getTemps(feature.geometry.coordinates[0][0][0], feature.properties.NAME_1);
 
   layer.on({
-    mouseover: function (e) {
-      e.target.setStyle({
-        fillOpacity: 0.8,
-      });
-    },
-    mouseout: function (e) {
-      geojsonLayer.resetStyle(e.target);
-    },
+    mouseover: highlight,
+    mouseout: reset
   });
 }
 
@@ -247,6 +322,7 @@ fetch("data/armenia-simple.geojson")
     }).addTo(map);
 
     loadData("population");
+    popBtn.classList.add("active")
   });
 
 // ! fetch temperature stats from open-meteo
@@ -263,6 +339,8 @@ async function getTemps(coords, region) {
     console.error("Fetch error:", error);
   }
 }
+
+
 
 // * locations
 // const locations = [
@@ -490,7 +568,7 @@ async function getTemps(coords, region) {
 //     if (feature.properties.name) {
 //       layer.bindPopup(feature.properties.name);
 //     }
-//   }
+//   c
 // }).addTo(map);
 
 // L.circle([40.1792, 44.4991], {

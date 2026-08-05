@@ -19,7 +19,9 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.AG",
-        "ISO_1": "NA"
+        "ISO_1": "NA",
+        "img": "https://www.advantour.com/img/armenia/aragatsotn/aragatsotn.jpg",
+        "main_info": "According to Movses Khorenatsi, Aramaniak -the son of the patriarch and founder of the Armenian nation Hayk- along with his clan, settled in the area of modern-day Aragatsotn. The cemeteries of Verin Naver archaeological site -located 3 km west of Ashtarak- date back to the 24th and 14th centuries BC."
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -195,7 +197,9 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.AR",
-        "ISO_1": "AM-AR"
+        "ISO_1": "AM-AR",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Gorgeous_Ararat_from_Armenia.jpg/1200px-Gorgeous_Ararat_from_Armenia.jpg",
+        "main_info": "The region of modern-day Ararat Province is among the earliest locations that was settled by the people of the Armenian Highland. It mainly includes the 3 cantons of Vostan Hayots, Urstadzor and Arats of the historic Ayrarat province"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -340,7 +344,9 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.AV",
-        "ISO_1": "AM-AV"
+        "ISO_1": "AM-AV",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/5/5d/%D5%84%D5%A1%D6%80%D5%A6%D5%AF%D5%A5%D5%B6%D5%BF%D6%80%D5%B8%D5%B6_%D4%B1%D6%80%D5%B4%D5%A1%D5%BE%D5%AB%D6%80.jpg",
+        "main_info": "he territory of ancient Armavir was inhabited since the 5th millennium BC. Many sites including the Metsamor Castle, Shresh hill and Mokhrablur hill date back to the Neolithic period. The ancient Urartian settlement of Argishtikhinili was founded in 776 BC by king Argishti I. "
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -482,7 +488,9 @@
         "ENGTYPE_1": "City",
         "CC_1": "NA",
         "HASC_1": "AM.ER",
-        "ISO_1": "AM-ER"
+        "ISO_1": "AM-ER",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Yerevan_2012_February.JPG/1280px-Yerevan_2012_February.JPG",
+        "main_info": "The ancient kingdom of Urartu was formed in the 9th century BC by King Arame in the basin of Lake Van of the Armenian Highland, including the territory of modern-day Yerevan. Archaeological evidence, such as a cuneiform inscription, indicates that the Urartian military fortress of Erebuni was founded in 782 BC by the orders of King Argishti I at the site of modern-day Yerevan, to serve as a fort and citadel guarding against attacks from the north Caucasus"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -546,7 +554,9 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.GR",
-        "ISO_1": "NA"
+        "ISO_1": "NA",
+        "img": "https://www.advantour.com/img/armenia/gegarkunik/sevanavank.jpg",
+        "main_info": "The early Armenian history Movses Khorenatsi connected the name of Gegharkunik with Gegham, a 5th-generation descendant of the legendary patriarch and founder of the Armenian nation Hayk. Gegham was the father of Sisak (founder of the Siunia dynasty) and Harma (grandfather of Ara the Beautiful). The Gegham Mountains and the Lake of Gegham (currently known as Lake Sevan) were also named after Gegham."
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -744,7 +754,10 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.KT",
-        "ISO_1": "NA"
+        "ISO_1": "NA",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/45/28/67/mount-ara.jpg?w=1400&h=500&s=1",
+        "main_info": "The earliest records about the region date back to the 1st and 2nd centuries AD. According to Ptolemy, Kotayk was directly ruled by the Arsacid kings of Armenia. However, during the 4th and the 5th centuries, the territories were granted to the Varazhnuni noble family who governed the forests and lands used as a hunting ground by the kings of the Arsacid kings. Later between the 5th and 7th centuries, the region was granted to the Kamsarakan and Amatuni families, under the Persian rule. Between the 7th and 9th centuries, Armenia suffered from the Arab Islamic occupation.By the end of the 9th century, the region became part of the newly established Bagratid Kingdom of Armenia. Between the 11th and 15th centuries, the region suffered from the Seljuk, Mongol, Ag Qoyunlu and Kara Koyunlu invasions, respectively."
+    
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -879,7 +892,9 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.LO",
-        "ISO_1": "AM-LO"
+        "ISO_1": "AM-LO",
+        "img": "https://avatars.mds.yandex.net/get-altay/15416268/2a00000198c6b79d7c7d03d779d5afaf04a6/XXL_height",
+        "main_info": "Excavations conducted in 1931 testify that the region of modern-day Lori was most probably settled during the 1st half of the 2nd millennium BC. Later, the region became part of the Urartu Kingdom between the 8th and 6th centuries BC. After the Achaemenid invasion, the region became part of the 18th Satrapy of Persia. With the establishment of the Kingdom of Armenia in 331 BC, the region became part of the kingdom within the historic Gugark province, the 13th province of Greater Armenia"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1134,7 +1149,9 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.SH",
-        "ISO_1": "NA"
+        "ISO_1": "NA",
+        "img": "https://eurasia.travel/wp-content/uploads/2025/06/4.-Lmbatavank-Shirak-region.jpg",
+        "main_info": "Many ancient human settlements have been found in the Akhurian valley dating back to around 9000 BC. The territory of Shirak has been settled since the early Stone Age. At the higher areas that are above 2000 meters, many remains have been found from the early Bronze Age. Other remains from the 2nd millennium BC, revealed that a civilization was founded between the 20th and 12th centuries BC. With the start of the Iron Age during the 12th century BC, relations among the various ethnic groups of Armenian Highland were developed. Soon after the establishment of the Urartu Kingdom of Van at the end of the 9th century BC, Shirak became part of the kingdom. Two cuneiform inscriptions have been found in Shirak left by King Argishti I (r.786...764 BC) of Urartu, where he wrote about the invasion of the land of Eriakhi (the name that Shirak is derived from, according to many historians)."
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1353,7 +1370,9 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.SU",
-        "ISO_1": "NA"
+        "ISO_1": "NA",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Goris_panor%C3%A1ma.jpg/1920px-Goris_panor%C3%A1ma.jpg",
+        "main_info": "The first dynasty to rule Syunik was the Siunia dynasty, beginning in the 1st century. The first known nakharar ruler was Valinak Siak (c. 330) and his successor was his brother Andok or Andovk (Antiochus, c. 340). In 379, Babik (Bagben) the son of Andok, was re-established as a nakharar by the Mamikonian family. Babik had a sister called Pharantzem who had married the Arsacid Prince Gnel, nephew of the Armenian King Arsaces II (Arshak II) and later married Arsaces II as her second husband. Babik's rule lasted for less than ten years and by about 386 or 387, Dara was deposed by the Sassanid Empire"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1654,7 +1673,9 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.TV",
-        "ISO_1": "NA"
+        "ISO_1": "NA",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Goris_panor%C3%A1ma.jpg/1920px-Goris_panor%C3%A1ma.jpg",
+        "main_info": "The territories of present-day Lori and Tavush along with the neighboring Georgia, became part of the Russian Empire in 1800...1801. The territories became an official region of Russia as per the Treaty of Gulistan signed between Imperial Russia and Qajar Persia in October 1813, following the Russo-Persian War of 1804...1813. In 1840, the Elizavetpol uezd was formed and most of the territories of Tavush were included in this new administrative division of the Russian Empire. Later in 1868, the Elisabethpol Governorate was established and Tavush became part of the newly formed Kazakh uezd of the governorate."
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1889,7 +1910,9 @@
         "ENGTYPE_1": "Province",
         "CC_1": "NA",
         "HASC_1": "AM.VD",
-        "ISO_1": "NA"
+        "ISO_1": "NA",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/%D5%8E%D5%A1%D5%B5%D6%84%D5%AB_%D5%AC%D5%A5%D5%BC%D5%B6%D5%A1%D5%B7%D5%B2%D5%A9%D5%A1.png/960px-%D5%8E%D5%A1%D5%B5%D6%84%D5%AB_%D5%AC%D5%A5%D5%BC%D5%B6%D5%A1%D5%B7%D5%B2%D5%A9%D5%A1.png",
+        "main_info": "Vayots Dzor is first mentioned in the History of Armenia by Movses Khorenatsi. The region has been inhabited by humans since prehistoric times. Archaeological investigations have uncovered many sites and objects dating back to the Paleolithic Era and the Bronze Age, including carvings on cliffs depicting scenes of hunting and animals. The Areni-1 cave complex—including the 6,100-year-old Areni-1 winery—discovered in archaeological excavations conducted between 2007 and 2011, revealed that the region was settled during the 5th millennium BC (Late Chalcolithic Age). The winery consists of fermentation vats, a wine press, storage jars, pottery sherds, and is believed to be the earliest known winery in history. A 5500-year-old leather shoe, the oldest known piece of leather footwear, has also been found in Areni-1."
       },
       "geometry": {
         "type": "MultiPolygon",

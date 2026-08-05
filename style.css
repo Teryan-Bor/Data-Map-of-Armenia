@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
 	box-sizing: border-box;
+}
+
+body {
+	position: relative;
 }
 
 #map {
@@ -12,32 +21,146 @@
 }
 
 .controls {
+	position: absolute;
 	display: flex;
 	flex-direction: row;
 	gap: 10px;
 
-	margin: 10px 0px;
+	background-color: rgba(215, 216, 217, 0.523);
+	padding: 30px 20px;
+
+	backdrop-filter: blur(10px);
+	top: 50px;
+	left: 20px;
+
+	border-radius: 15px;
+	z-index: 1000;
 }
 
 .controls button{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	height: 50px;
 	width: 100px;
+	padding: 10px 10px;
+	border: 2px solid rgb(139, 139, 214);
 	border-radius: 15px;
-	font-size: 14px;
+
+	background-color: transparent;
+
+	font-size: 13px;
 	font-weight: 600;
+	font-family: "Montserrat", sans-serif;
 	transition: all 0.5s ease;
 	
 }
 
 .controls button:hover {
 	background-color: rgba(11, 130, 220, 0.911);
-	border: 3px solid rgb(72, 10, 80);
-
+	border: 2px solid rgb(72, 10, 80);
 }
 
-.active {
-	background-color: aquamarine;
+.controls button.active {
+	background-color: rgb(11, 64, 130);
+	color: whitesmoke;
+	border: none;
 }
+
+.info.leaflet-control{
+	position: relative;
+	top: 50px;
+	right: 20px;
+
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	margin: 0;
+	padding: 10px 20px;
+	background-color: #dfdfdfb4;
+	border-radius: 20px;
+}
+
+.hover_region {
+	font-size: 16px;
+	font-weight: 800;
+	font-family: "Playfair Display", serif;
+}
+
+.region_label {
+	font-size: 13px;
+	font-family: "Montserrat", sans-serif;
+}
+
+.info_card {
+	width: 500px;
+	height: auto;
+	border-radius: 20px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	z-index: 0;
+
+	padding: 10px 
+}
+
+.info_card img {
+	width: 500px;
+	height: auto;
+	object-fit: contain;
+	border-radius: inherit;
+}
+
+.text-wrapper {
+	padding-inline: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.text-wrapper h3 {
+	font-size: clamp(32px, 3.5vw, 52px);
+	font-family: "Noto Serif", serif;
+	text-align: center;
+	margin: 0;
+}
+
+.text-wrapper p {
+	font-size: 15px;
+	line-height: 130%;
+	font-family: "Roboto", sans-serif
+}
+
+.info_card button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 200px;
+	height: 50px;
+	padding: 10px;
+	border-radius: 15px;
+	border: 2px solid rgb(24, 119, 208) ;
+	background-color: transparent;
+	color: rgb(0, 0, 0);
+
+	font-size: 14px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+
+	transition: all 0.5s ease
+}
+
+.info_card button:hover {
+	background-color: rgb(21, 117, 207);
+	color: black;
+	border: none;
+
+	transform: translateX(20%);
+}
+
