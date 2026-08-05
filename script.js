@@ -78,30 +78,210 @@ let map = L.map("map").setView([40.18, 44.51], 7);
       // });
 // })
 
+// ! spot temperature 
+// const marker = L.marker([40.1792, 44.4991], {
+//   draggable: true
+// }).addTo(map);
 
-const marker = L.marker([40.1792, 44.4991], {
-  draggable: true
-}).addTo(map);
+// let temp = document.getElementById("temp");
 
-let temp = document.getElementById("temp");
+// marker.on("dragend", (e) => {
+//  const position = marker.getLatLng();
 
-marker.on("dragend", (e) => {
- const position = marker.getLatLng();
+//  fetch('https://api.open-meteo.com/v1/forecast?latitude=' + position.lat + '&longitude=' + position.lng + '&current_weather=true') 
+//    .then(response => {
+//       if (!response.ok) throw new Error('Network response was not OK');
+//       return response.json();
+//     })
+//    .then(data => {
+// 			temp.innerHTML = " "
+//       temp.innerText += `${data.current_weather.temperature} C`;
+//       })
+//    .catch(error => {
+//   		console.error('Fetch error:', error);
+//   });
 
- fetch('https://api.open-meteo.com/v1/forecast?latitude=' + position.lat + '&longitude=' + position.lng + '&current_weather=true') 
-   .then(response => {
-      if (!response.ok) throw new Error('Network response was not OK');
-      return response.json();
-    })
-   .then(data => {
-			temp.innerHTML = " "
-      temp.innerText += `${data.current_weather.temperature} C`;
-      })
-   .catch(error => {
-  		console.error('Fetch error:', error);
-  });
+// });
 
-});
+// const geojsonLine = {
+//   "type": "Feature",
+//   "properties": {
+//     "name": "Yerevan"
+//   },
+//   "geometry": {
+//     "type": "Polygon",
+//     "coordinates": [[
+//       [44.50, 40.18],
+//       [44.60, 40.18],
+//       [44.60, 40.25],
+//       [44.50, 40.25],
+//       [44.50, 40.18]
+//     ]]
+//   }
+// }
+
+// const geojsonData = {
+//   "type": "FeatureCollection",
+//   "features": [
+//     {
+//       "type": "Feature",
+//       "properties": { "name": "Vardenis" },
+//       "geometry": {
+//         "type": "Point",
+//         "coordinates": [45.7346248, 40.1851003]
+//       }
+//     },
+//     {
+//       "type": "Feature",
+//       "properties": { "name": "Area B" },
+//       "geometry": {
+//         "type": "Polygon",
+//         "coordinates": [[
+//           [44.52, 40.19],
+//           [44.55, 40.19],
+//           [44.55, 40.22],
+//           [44.52, 40.22],
+//           [44.52, 40.19]
+//         ]]
+//       }
+//     }
+//   ]
+// };
+
+// ?two polygons with the same name
+let multiPolygonGeoJSON = {
+      "type": "Feature",
+      "properties": {
+        "name": "Two Areas"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [ // First polygon
+              [44.50, 40.18],
+              [44.55, 40.18],
+              [44.55, 40.22],
+              [44.50, 40.22],
+              [44.50, 40.18]
+            ]
+          ],
+          [
+            [ // Second polygon
+              [44.60, 40.20],
+              [44.65, 40.20],
+              [44.65, 40.25],
+              [44.60, 40.25],
+              [44.60, 40.20]
+            ]
+          ]
+        ]
+      }
+    };
+
+  L.geoJSON(multiPolygonGeoJSON, {
+    onEachFeature: function (feature, layer) {
+      if (feature.properties.name) {
+        layer.bindPopup(feature.properties.name);
+      }
+    }
+  }).addTo(map);
+
+// ? two polygons with different names
+// let frstpol = {
+//   "type": "Feature",
+//   "properties": {
+//     "name": "Two Areas"
+//   },
+//   "geometry": {
+//     "type": "MultiPolygon",
+//     "coordinates": [
+//       [
+//         [ // First polygon
+//           [44.50, 40.18],
+//           [44.55, 40.18],
+//           [44.55, 40.22],
+//           [44.50, 40.22],
+//           [44.50, 40.18]
+//         ]
+//       ]
+//     ]
+//   }
+// };
+
+// let secpol = {
+//   "type": "Feature",
+//   "properties": {
+//     "name": "Abovyan"
+//   },
+//   "geometry": {
+//     "type": "MultiPolygon",
+//     "coordinates": [
+//       [
+//         [ // Second polygon
+//           [44.60, 40.20],
+//           [44.65, 40.20],
+//           [44.65, 40.25],
+//           [44.60, 40.25],
+//           [44.60, 40.20]
+//         ]
+//       ]
+//     ]
+//   }
+// };
+
+// L.geoJSON(frstpol, {
+//   onEachFeature: function (feature, layer) {
+//     if (feature.properties.name) {
+//       layer.bindPopup(feature.properties.name);
+//     }
+//   }
+// }).addTo(map);
+
+// L.geoJSON(secpol, {
+//   onEachFeature: function (feature, layer) {
+//     if (feature.properties.name) {
+//       layer.bindPopup(feature.properties.name);
+//     }
+//   }
+// }).addTo(map);
+
+// ! fetching api from data armenia-simple file
+// fetch("data/armenian-simple.geojson")
+//   .then((r) => r.json())
+//   .then((geoData) => {
+//     geojsonLayer = L.geoJson(geoData, {
+//       style,
+//       onEachFeature
+//     }).addTo(map)
+//   })
+
+
+// function style() {
+//   return {
+//     color: "purple",
+//     weight: 2,
+//     fillColor: "violet",
+//     fillOpacity: 0.5
+//   }
+// }
+
+// function onEachFeature(feature, layer) {
+//   if(feature.properties && feature.properties.name) {
+//     layer.bindPopup(feature.properties.name);
+//   }
+
+//   layer.on({
+//     mouseover: function (e) {
+//       e.target.setStyle({
+//         fillOpacity: 0.8
+//       });
+//     },
+//     mouseout: function (e) {
+//       geojsonLayer.resetStyle(e.target);
+//     }
+//   })
+// }
 
 // L.circle([40.1792, 44.4991], {
 //   radius: 50000,
