@@ -68,6 +68,8 @@ This project was built to practice:
 
 Clone the repository and open `index.html` in your browser. No build tools or installation required.
 
+[Live Demo]: https://teryan-bor.github.io/Data-Map-of-Armenia/
+
 ```bash
 git clone <your-repo-url>
 cd <project-folder>
@@ -76,4 +78,3 @@ cd <project-folder>
 
 > Make sure to serve the project through a local server (e.g. VS Code Live Server) so that `fetch` requests to local files work correctly.
 
-[Live Demo]: https://teryan-bor.github.io/Data-Map-of-Armenia/
